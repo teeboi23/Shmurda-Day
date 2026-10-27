@@ -1,0 +1,110 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: "Alfa Slab One", serif;
+  font-weight: 400;
+  min-height: 100dvh;
+  background: #111;
+}
+.instructions {
+  width: min(100%, 34rem);
+  padding: clamp(1rem, 4vw, 1.5rem);
+  text-align: left;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+}
+
+.instructions h2 {
+  font-weight: 400;
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.instructions ol {
+  padding-left: 1.4rem;
+  display: grid;
+  gap: 0.5rem;
+  font-family: system-ui, sans-serif; /* easier to read than the slab font at small sizes */
+  font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+  line-height: 1.5;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url(https://images.pexels.com/photos/6826288/pexels-photo-6826288.jpeg) center / cover no-repeat;
+}
+
+.hero {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.25rem, 5vw, 3rem);
+  padding: 1.5rem;
+  padding-top: max(1.5rem, env(safe-area-inset-top));
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  padding-left: max(1.5rem, env(safe-area-inset-left));
+  padding-right: max(1.5rem, env(safe-area-inset-right));
+  text-align: center;
+}
+
+h1 {
+  font-family: "Alfa Slab One", serif;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 7vw + 0.5rem, 4.5rem);
+  line-height: 1.15;
+  max-width: 18ch;
+  overflow-wrap: anywhere;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.button-container { width: 100%; display: flex; justify-content: center; }
+
+button {
+  font-family: "Alfa Slab One", serif;
+  font-size: clamp(1.1rem, 1rem + 1.5vw, 1.75rem);
+  font-weight: bold;
+  color: #fff;
+  background-color: rgb(22, 22, 80);
+  border: none;
+  border-radius: 30px;
+  min-height: 56px;
+  padding: 0.9rem 2rem;
+  width: min(100%, 24rem);
+  cursor: pointer;
+  touch-action: manipulation;
+  animation: blinking-effect 1s infinite steps(1, start);
+}
+
+button:active { transform: scale(0.97); }
+
+@keyframes blinking-effect {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media (min-width: 768px) {
+  button { width: auto; padding-inline: 3rem; }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+  .hero { gap: 0.75rem; }
+  h1 { font-size: clamp(1.5rem, 5vw, 2.25rem); }
+  button { min-height: 48px; padding-block: 0.6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button { animation: none; }
+}

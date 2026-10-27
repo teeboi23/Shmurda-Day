@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>SHMURDA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Delicious+Handrawn&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/first.css" />
+  <link rel="shortcut icon" href="https://images.pexels.com/photos/18512068/pexels-photo-18512068.jpeg" type="image/x-icon" />
+</head>
+<body>
+  <main class="page">
+
+    <section class="message-bar">
+      <label for="wish">Kindly send in your Birthday message</label>
+      <div class="message-row">
+        <input id="wish" type="text" placeholder="Type your message…" />
+        <a class="sendbutton" href="/assets/image.png">Send</a>
+      </div>
+    </section>
+
+    <div class="showcase">
+      <section class="birthday-message-card">
+        <p>🎉🎂🥳✨🎁🎈🎊🥂👑🌟 <strong>Happy Birthday to an absolute legend! (Chisom)</strong> 🥳🎂🎉</p>
+
+        <p>Today isn't just another date on the calendar—it's a day dedicated to honoring an amazing brother, an incredible friend, and a genuinely wonderful human being! 🌟🥂💖</p>
+
+        <p>Thank you for being a constant source of inspiration, joy, and dependable brotherhood. Your drive, creativity, and warm heart make the world a much better place for everyone blessed enough to know you. You navigate life with grace, dedication, and a relentless spirit that inspires everyone around you! 🚀💪🔥</p>
+
+        <p>On this special day, we wish you:</p>
+        <ul class="wishes">
+          <li>🌱 <strong>Unstoppable Growth:</strong> May every goal you set this year be achieved effortlessly. 📈🎯</li>
+          <li>🕊️ <strong>Abundant Blessings:</strong> Peace, good health, continuous laughter, and prosperity in all your endeavors. 🤲✨</li>
+          <li>🚪 <strong>Unforgettable Joy:</strong> May your new age open doors to bigger opportunities and greater happiness. 🔑💫</li>
+        </ul>
+
+        <p class="callout">!!! To all family and friends tuning in: Feel free to share this link, join in the celebration, and shower our celebrant with your favorite birthday wishes today! 🥳👏💌 !!!</p>
+
+        <p>Cheers to a bigger, better, and more impactful year ahead! Happy Birthday! Dark truth 🍾✨👑🎉</p>
+
+        <audio autoplay loop src="/assets/atlasaudio-birthday-606219 (1).mp3"></audio>
+      </section>
+
+      <section class="video-wrap">
+        <video autoplay muted loop playsinline src="/assets/WhatsApp Video 2026-10-27 at 10.30.37.mp4"></video>
+      </section>
+    </div>
+
+    <section class="airtime-section">
+      <h2>🎁 Grab Birthday Airtime!</h2>
+      <p>Click your network logo to reveal a recharge pin:</p>
+
+      <div class="airtime-grid">
+        <button class="network-card mtn" onclick="openClaimModal('MTN', '*311*1234567890123456# 311*1234567890123456# 311*1234567890123456# 311*1234567890123456# 311*1234567890123456#')">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHj9Hcz5fm1XTNIhPHvwH0CWqQ6w5vQkKtEsS6kFVh3w&s=10" alt="MTN" />
+          <span>Claim MTN</span>
+        </button>
+
+        <button class="network-card airtel" onclick="openClaimModal('Airtel', '*315*9876543210987654#')">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRps0dJqR7BXK9fiWfqVsBAOuhZ_CrmkTnzKppWJ56uSqmX4UBNU4NQDXxE&s=10" alt="Airtel" />
+          <span>Claim Airtel</span>
+        </button>
+
+        <button class="network-card glo" onclick="openClaimModal('Glo', '*123*456789123456789#')">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsXjTm2GBycWhiWEi3B023VOJ4IiGEbeoJxwqyUdY-HA&s=10" alt="Glo" />
+          <span>Claim Glo</span>
+        </button>
+
+        <button class="network-card mobile9" onclick="openClaimModal('9mobile', '*222*112233445566778#')">
+          <img src="https://cdn.punchng.com/wp-content/uploads/2017/07/19170207/9Mobile-Telecom-Logo.jpg" alt="9mobile" />
+          <span>Claim 9mobile</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div id="airtimeModal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeClaimModal()">&times;</span>
+      <h3 id="modalNetworkTitle">Network Airtime</h3>
+      <p>Copy the pin below and load it on your phone:</p>
+      <div class="pin-box">
+        <span id="airtimePinText"></span>
+        <button onclick="copyPin()" id="copyBtn">Copy Pin</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
